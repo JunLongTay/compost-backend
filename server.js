@@ -252,5 +252,8 @@ app.get('/table-samples', async (req, res) => {
   }
 });
 
-// Start server
-app.listen(3001, () => console.log('✅ Backend running at http://localhost:3001'));
+// Start server (Render-compatible port)
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`✅ Backend running at http://localhost:${PORT}`);
+});
